@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fally Backend — Fall events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100">
+    <div class="border-b border-slate-800 bg-slate-900/80 backdrop-blur">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4">
+        <div>
+          <p class="text-xs uppercase tracking-widest text-slate-400">
+            Fally CCTV
+          </p>
+          <h1 class="text-xl font-semibold text-white">Backend dashboard</h1>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <button
+            id="btn-refresh"
+            type="button"
+            class="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          >
+            Refresh
+          </button>
+        </div>
+      </div>
+      <div
+        id="kpi-row"
+        class="mx-auto grid max-w-7xl gap-3 px-4 pb-4 sm:grid-cols-3"
+      ></div>
+    </div>
+
+    <div class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-6 lg:flex-row">
+      <aside
+        class="w-full shrink-0 rounded-xl border border-slate-800 bg-slate-900/60 p-4 lg:w-72"
+      >
+        <h2 class="mb-3 text-sm font-semibold text-slate-200">Filters</h2>
+        <form id="filter-form" class="space-y-3 text-sm">
+          <div>
+            <label class="mb-1 block text-xs text-slate-400" for="filter-camera"
+              >Camera</label
+            >
+            <select
+              id="filter-camera"
+              name="cameraId"
+              class="w-full rounded-md border border-slate-700 bg-slate-950 px-2 py-2 text-slate-100"
+            >
+              <option value="">All cameras</option>
+            </select>
+          </div>
+          <div>
+            <label class="mb-1 block text-xs text-slate-400" for="filter-label"
+              >Label</label
+            >
+            <select
+              id="filter-label"
+              name="label"
+              class="w-full rounded-md border border-slate-700 bg-slate-950 px-2 py-2 text-slate-100"
+            >
+              <option value="">Any label</option>
+              <option value="Fall Detected">Fall Detected</option>
+              <option value="Walking">Walking</option>
+              <option value="Sitting">Sitting</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="mb-1 block text-xs text-slate-400" for="filter-from"
+                >From</label
+              >
+              <input
+                id="filter-from"
+                name="from"
+                type="datetime-local"
+                class="w-full rounded-md border border-slate-700 bg-slate-950 px-2 py-2 text-xs text-slate-100"
+              />
+            </div>
+            <div>
+              <label class="mb-1 block text-xs text-slate-400" for="filter-to"
+                >To</label
+              >
+              <input
+                id="filter-to"
+                name="to"
+                type="datetime-local"
+                class="w-full rounded-md border border-slate-700 bg-slate-950 px-2 py-2 text-xs text-slate-100"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="mb-1 block text-xs text-slate-400" for="filter-resolved"
+              >Resolved</label
+            >
+            <select
+              id="filter-resolved"
+              name="resolvedMode"
+              class="w-full rounded-md border border-slate-700 bg-slate-950 px-2 py-2 text-slate-100"
+            >
+              <option value="">Any</option>
+              <option value="false">Unresolved only</option>
+              <option value="true">Resolved only</option>
+            </select>
+          </div>
+          <div class="flex gap-2 pt-1">
+            <button
+              type="submit"
+              class="flex-1 rounded-lg bg-slate-100 px-3 py-2 text-sm font-medium text-slate-900 hover:bg-white"
+            >
+              Apply
+            </button>
+            <button
+              type="button"
+              id="btn-clear-filters"
+              class="rounded-lg border border-slate-600 px-3 py-2 text-sm text-slate-200 hover:bg-slate-800"
+            >
+              Clear
+            </button>
+          </div>
+        </form>
+      </aside>
+
+      <main class="min-w-0 flex-1">
+        <div
+          id="status-banner"
+          class="mb-3 hidden rounded-lg border border-amber-700/60 bg-amber-950/40 px-3 py-2 text-sm text-amber-100"
+        ></div>
+        <div
+          id="events-grid"
+          class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
+        ></div>
+        <p id="empty-state" class="hidden py-12 text-center text-slate-500">
+          No events match the current filters.
+        </p>
+      </main>
+    </div>
+
+    <div
+      id="modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 p-4"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="max-h-[90vh] w-full max-w-4xl overflow-auto rounded-xl border border-slate-700 bg-slate-900 shadow-2xl"
+      >
+        <div class="flex items-center justify-between border-b border-slate-800 px-4 py-3">
+          <h3 class="text-sm font-semibold text-white">Event detail</h3>
+          <button
+            type="button"
+            id="modal-close"
+            class="rounded-md px-2 py-1 text-slate-400 hover:bg-slate-800 hover:text-white"
+          >
+            Close
+          </button>
+        </div>
+        <div class="grid gap-4 p-4 lg:grid-cols-2">
+          <div class="overflow-hidden rounded-lg border border-slate-800 bg-black">
+            <img id="modal-image" alt="Snapshot" class="w-full object-contain" />
+          </div>
+          <div>
+            <p class="mb-2 text-xs uppercase text-slate-500">Raw JSON</p>
+            <pre
+              id="modal-json"
+              class="max-h-[60vh] overflow-auto rounded-lg bg-slate-950 p-3 text-xs text-emerald-100"
+            ></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>

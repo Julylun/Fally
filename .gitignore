@@ -1,0 +1,19 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs (catch any stray)
+*.log
+
+# Env files (safety net — also covered per-folder)
+.env
+.env.local
+.env.*.local

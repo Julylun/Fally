@@ -1,0 +1,29 @@
+# Compiled output
+/dist
+/node_modules
+*.tsbuildinfo
+
+# Env (keep .env.example tracked)
+.env
+.env.local
+.env.*.local
+
+# Runtime data (snapshots) — keep folder structure via .gitkeep
+/data/*
+!/data/snapshots/
+/data/snapshots/*
+!/data/snapshots/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage
+/coverage
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,9 @@
+# Pin versions for reproducible installs. Use Python 3.10–3.12 for best torch/ultralytics wheel support.
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+ultralytics==8.3.49
+opencv-python==4.10.0.84
+httpx==0.28.1
+aiosqlite==0.20.0
+pydantic-settings==2.6.1
+pydantic==2.10.3

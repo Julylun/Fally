@@ -1,0 +1,18 @@
+# Ultralytics training output (when re-running fally_cctv locally)
+runs/
+wandb/
+
+# Backup / intermediate weights
+*.pt.bak
+last.pt
+*.onnx.tmp
+
+# Datasets (large, fetched from Kaggle)
+fall-detection-dataset.zip
+fall_detection_data/
+
+# Misc
+*.log
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fally Edge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+  <header class="border-b border-slate-800 px-4 py-3 flex flex-wrap items-center gap-3 justify-between">
+    <div>
+      <h1 class="text-lg font-semibold tracking-tight" id="title">Fally Edge</h1>
+      <p class="text-xs text-slate-500">Local MJPEG + SQLite log</p>
+    </div>
+    <div class="flex flex-wrap items-center gap-2 text-xs">
+      <span id="pill-live" class="rounded-full px-2 py-1 bg-slate-800 text-slate-300">…</span>
+      <span id="pill-fps" class="rounded-full px-2 py-1 bg-slate-800 text-slate-300">FPS —</span>
+      <span id="pill-backend" class="rounded-full px-2 py-1 bg-slate-800 text-slate-300">Backend —</span>
+      <span id="pill-unsynced" class="rounded-full px-2 py-1 bg-amber-900/40 text-amber-200">Unsynced —</span>
+    </div>
+    <div class="flex gap-2">
+      <button id="btn-refresh" type="button" class="rounded-md bg-slate-800 px-3 py-1.5 text-sm hover:bg-slate-700 border border-slate-700">
+        Refresh
+      </button>
+      <button id="btn-test" type="button" class="rounded-md bg-indigo-600 px-3 py-1.5 text-sm hover:bg-indigo-500">
+        Send test event
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-1 flex flex-col lg:flex-row gap-3 p-3 min-h-0">
+    <section class="flex-1 flex flex-col min-h-[40vh] lg:min-h-0 bg-black rounded-lg border border-slate-800 overflow-hidden">
+      <img
+        id="live"
+        src="/video_feed"
+        alt="Live feed"
+        class="w-full h-full object-contain bg-black"
+      />
+    </section>
+    <aside class="w-full lg:w-96 flex flex-col border border-slate-800 rounded-lg bg-slate-900/40 min-h-[30vh]">
+      <div class="px-3 py-2 border-b border-slate-800 text-sm font-medium text-slate-300">
+        Local events
+      </div>
+      <ul id="events" class="flex-1 overflow-y-auto divide-y divide-slate-800 text-sm"></ul>
+    </aside>
+  </main>
+
+  <div id="toast" class="fixed bottom-4 right-4 hidden max-w-sm rounded-md bg-slate-900 border border-slate-700 px-3 py-2 text-xs shadow-lg"></div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    function showToast(msg, ok = true) {
+      const t = $("toast");
+      t.textContent = msg;
+      t.classList.remove("hidden");
+      t.classList.toggle("border-emerald-700", ok);
+      t.classList.toggle("border-rose-700", !ok);
+      setTimeout(() => t.classList.add("hidden"), 3500);
+    }
+
+    async function loadStatus() {
+      const r = await fetch("/api/status");
+      if (!r.ok) throw new Error("status failed");
+      const s = await r.json();
+      $("title").textContent = `Fally Edge — ${s.camera_id}`;
+      $("pill-live").textContent = s.camera_open ? "Camera: live" : "Camera: idle / placeholder";
+      $("pill-fps").textContent = `FPS ${s.fps}`;
+      const br = s.backend_reachable ? "Backend: reachable" : "Backend: unreachable";
+      $("pill-backend").textContent = br;
+      $("pill-unsynced").textContent = `Unsynced ${s.unsynced_count}`;
+      return s;
+    }
+
+    function fmtTime(iso) {
+      if (!iso) return "—";
+      try {
+        const d = new Date(iso);
+        return d.toLocaleString();
+      } catch {
+        return iso;
+      }
+    }
+
+    async function loadEvents() {
+      const r = await fetch("/api/events?limit=50");
+      if (!r.ok) throw new Error("events failed");
+      const items = await r.json();
+      const ul = $("events");
+      ul.innerHTML = "";
+      if (!items.length) {
+        const li = document.createElement("li");
+        li.className = "px-3 py-4 text-slate-500";
+        li.textContent = "No local events yet.";
+        ul.appendChild(li);
+        return;
+      }
+      for (const ev of items) {
+        const li = document.createElement("li");
+        li.className = "px-3 py-2 hover:bg-slate-800/60";
+        const badge = ev.synced
+          ? '<span class="text-[10px] uppercase tracking-wide rounded px-1.5 py-0.5 bg-emerald-900/50 text-emerald-200">synced</span>'
+          : '<span class="text-[10px] uppercase tracking-wide rounded px-1.5 py-0.5 bg-amber-900/50 text-amber-200">pending</span>';
+        li.innerHTML = `
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="font-medium">${ev.label} <span class="text-slate-500 font-normal">#${ev.id}</span></div>
+              <div class="text-xs text-slate-500">${fmtTime(ev.detected_at)} · ${(ev.confidence * 100).toFixed(0)}%</div>
+            </div>
+            <div class="shrink-0">${badge}</div>
+          </div>
+          <div class="mt-2">
+            <img src="/api/snapshots/${ev.id}" alt="" class="w-full rounded border border-slate-800 max-h-32 object-cover bg-black" loading="lazy" />
+          </div>
+        `;
+        ul.appendChild(li);
+      }
+    }
+
+    async function refreshAll() {
+      try {
+        await loadStatus();
+        await loadEvents();
+      } catch (e) {
+        console.error(e);
+        showToast("Refresh failed — is the edge server running?", false);
+      }
+    }
+
+    $("btn-refresh").addEventListener("click", refreshAll);
+    $("btn-test").addEventListener("click", async () => {
+      try {
+        const r = await fetch("/api/test-event", { method: "POST" });
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok) throw new Error(j.detail || r.statusText);
+        showToast(`Test event queued (local #${j.local_event_id})`, true);
+        await refreshAll();
+      } catch (e) {
+        console.error(e);
+        showToast("Test event failed", false);
+      }
+    });
+
+    refreshAll();
+  </script>
+</body>
+</html>
