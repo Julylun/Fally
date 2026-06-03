@@ -10,14 +10,10 @@ import 'backend_config.dart';
 ///
 /// Offline persistence / retry queue is intentionally **not** implemented (phase 2).
 class FallBackendClient {
-  FallBackendClient({
-    FallBackendConfig? config,
-    http.Client? httpClient,
-  }) : _config = config ?? FallBackendConfig.fromEnvironment(),
-       _client = httpClient ?? http.Client(),
-       _ownsClient = httpClient == null;
+  FallBackendClient({FallBackendConfig? config, http.Client? httpClient})
+    : _client = httpClient ?? http.Client(),
+      _ownsClient = httpClient == null;
 
-  final FallBackendConfig _config;
   final http.Client _client;
   final bool _ownsClient;
 
@@ -28,7 +24,8 @@ class FallBackendClient {
     required double confidence,
     required DateTime detectedAtUtc,
   }) async {
-    final trimmedBase = _config.baseUrl.trim();
+    final config = await FallBackendConfig.load();
+    final trimmedBase = config.baseUrl.trim();
     if (trimmedBase.isEmpty) {
       developer.log(
         'Mobile fall reporting disabled (BACKEND_BASE_URL is empty).',
@@ -44,7 +41,7 @@ class FallBackendClient {
       final bodyMap = <String, dynamic>{
         'detectedAt': detectedAtUtc.toUtc().toIso8601String(),
         'confidence': confidence,
-        'scopeId': _config.scopeId,
+        'scopeId': config.scopeId,
       };
 
       final response = await _client
@@ -52,7 +49,7 @@ class FallBackendClient {
             uri,
             headers: {
               'Content-Type': 'application/json',
-              'X-Edge-Token': _config.sharedToken,
+              'X-Edge-Token': config.sharedToken,
             },
             body: jsonEncode(bodyMap),
           )

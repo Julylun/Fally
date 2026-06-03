@@ -39,6 +39,7 @@ dependencies:
   sensors_plus: ^7.0.0
   onnxruntime: ^1.4.1
   http: ^1.0.0
+  shared_preferences: ^2.5.5
 
 dev_dependencies:
   flutter_test:

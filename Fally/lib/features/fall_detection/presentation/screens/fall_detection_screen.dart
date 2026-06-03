@@ -4,6 +4,7 @@ import 'package:fally_app/features/fall_detection/data/backend_config.dart';
 import 'package:fally_app/features/fall_detection/data/fall_backend_client.dart';
 import 'package:fally_app/features/fall_detection/domain/services/fall_inference_service.dart';
 import 'package:flutter/material.dart';
+import '../../data/backend_config.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
 class FallDetectionScreen extends StatefulWidget {
@@ -14,6 +15,16 @@ class FallDetectionScreen extends StatefulWidget {
 }
 
 class _FallDetectionScreenState extends State<FallDetectionScreen> {
+  void _initConfig() async {
+    final config = await FallBackendConfig.load();
+    if (mounted) {
+      setState(() {
+        _backendConfig = config;
+        _backendClient = FallBackendClient();
+      });
+    }
+  }
+
   static const _sampleCount = 31;
   static const _windowSize = 128;
   static const _windowStep = 64;
@@ -62,10 +73,8 @@ class _FallDetectionScreenState extends State<FallDetectionScreen> {
   DateTime _accelerometerWindowStart = DateTime.now();
   DateTime _gyroscopeWindowStart = DateTime.now();
   final FallInferenceService _inferenceService = FallInferenceService();
-  final FallBackendConfig _backendConfig = FallBackendConfig.fromEnvironment();
-  late final FallBackendClient _backendClient = FallBackendClient(
-    config: _backendConfig,
-  );
+  FallBackendConfig? _backendConfig;
+  FallBackendClient? _backendClient;
   DateTime? _lastReportedFallAt;
 
   final List<_SensorSample> _sensorWindow = <_SensorSample>[];
@@ -80,6 +89,7 @@ class _FallDetectionScreenState extends State<FallDetectionScreen> {
   @override
   void initState() {
     super.initState();
+    _initConfig();
     _initModel();
     _accelerometerSub =
         accelerometerEventStream(
@@ -112,7 +122,7 @@ class _FallDetectionScreenState extends State<FallDetectionScreen> {
   void dispose() {
     _accelerometerSub?.cancel();
     _gyroscopeSub?.cancel();
-    _backendClient.close();
+    _backendClient?.close();
     _inferenceService.dispose();
     super.dispose();
   }
@@ -226,7 +236,9 @@ class _FallDetectionScreenState extends State<FallDetectionScreen> {
       if (result.isFallDetected) {
         final nowUtc = DateTime.now().toUtc();
         final last = _lastReportedFallAt;
-        final cooldown = Duration(seconds: _backendConfig.fallCooldownSeconds);
+        final cooldown = Duration(
+          seconds: _backendConfig?.fallCooldownSeconds ?? 5,
+        );
         final pastCooldown =
             last == null || nowUtc.difference(last) >= cooldown;
         if (pastCooldown) {
@@ -234,7 +246,7 @@ class _FallDetectionScreenState extends State<FallDetectionScreen> {
           // network while the backend is down or slow; next try after cooldown.
           _lastReportedFallAt = nowUtc;
           unawaited(
-            _backendClient.reportMobileFall(
+            _backendClient?.reportMobileFall(
               confidence: result.fallProbability,
               detectedAtUtc: nowUtc,
             ),
@@ -259,9 +271,59 @@ class _FallDetectionScreenState extends State<FallDetectionScreen> {
     }
   }
 
+  void _showSettingsDialog() async {
+    final config = await FallBackendConfig.load();
+    if (!mounted) return;
+    final controller = TextEditingController(text: config.baseUrl);
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Cấu hình IP Nội bộ'),
+          content: TextField(
+            controller: controller,
+            decoration: const InputDecoration(
+              hintText: 'http://192.168.1.100:3000',
+              labelText: 'Backend IP',
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Hủy'),
+            ),
+            TextButton(
+              onPressed: () async {
+                await FallBackendConfig.saveBaseUrl(controller.text);
+                if (mounted) {
+                  Navigator.pop(context);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Đã cập nhật IP thành công!')),
+                  );
+                  _initConfig(); // Reload config
+                }
+              },
+              child: const Text('Lưu'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Fally'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: _showSettingsDialog,
+          ),
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),

@@ -19,6 +19,12 @@ export class DemoController {
     private readonly storageService: StorageService,
   ) {}
 
+  @Get('view')
+  async getView() {
+    const html = await fs.readFile(join(process.cwd(), 'public/demo/view.html'), 'utf-8');
+    return html;
+  }
+
   @Get()
   async getDemo() {
     const html = await fs.readFile(join(process.cwd(), 'public/demo/index.html'), 'utf-8');
