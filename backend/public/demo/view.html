@@ -39,8 +39,24 @@
         }
       }
 
+      @keyframes pulse-yellow {
+        0%,
+        100% {
+          background-color: rgba(217, 119, 6, 0.2);
+          box-shadow: 0 0 20px rgba(217, 119, 6, 0.1);
+        }
+        50% {
+          background-color: rgba(217, 119, 6, 0.4);
+          box-shadow: 0 0 30px rgba(217, 119, 6, 0.3);
+        }
+      }
+
       .alert-pulse {
         animation: pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      .warning-pulse {
+        animation: pulse-yellow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
       }
 
       .scan-line {
@@ -524,6 +540,7 @@
 
     <script>
       let lastIncidentId = null;
+      let lastState = null;
 
       function addLog(msg) {
         const d = new Date();
@@ -535,7 +552,6 @@
         const logContainer = document.getElementById('llm-log');
         logContainer.appendChild(p);
 
-        // Keep only last 50 logs
         while (logContainer.children.length > 50) {
           logContainer.removeChild(logContainer.firstChild);
         }
@@ -573,10 +589,8 @@
       function updateCctvCard(incident) {
         if (incident.cctvDetected) {
           if (incident.snapshotFilename) {
-            // Using incidents controller or snapshot controller endpoint directly
             document.getElementById('cctv-placeholder').style.display = 'none';
 
-            // Fetch the event snapshot from Mongoose raw event
             const imgEl = document.getElementById('cctv-image');
             imgEl.src = '/api/v1/snapshots/' + incident.rawCctvEventId;
             imgEl.style.display = 'block';
@@ -620,7 +634,7 @@
           } catch (e) {}
 
           document.getElementById('llm-conf').textContent = conf + '%';
-          addLog(`Gemini AI: ${reasonText}`);
+          addLog(`Gemini AI Reasoning: ${reasonText} (Độ tự tin: ${conf}%)`);
         }
       }
 
@@ -642,20 +656,79 @@
 
         let desc =
           'Hệ thống đã xác nhận sự cố té ngã tại ' +
-          (incident.scopeId || 'Khu vực chưa xác định') +
+          (incident.scopeId || 'Khu vực chung') +
           '. Giao thức cấp cứu đã được khởi tạo.';
         if (incident.notifyType === 'MOBILE_AND_CCTV') {
           desc =
-            'Cả 2 nguồn dữ liệu (Mobile & CCTV) đều xác nhận té ngã. Mức độ ưu tiên khẩn cấp cực cao!';
+            'Xác nhận té ngã đồng thời: Mobile App và Camera CCTV đều kích hoạt. Độ tin cậy tuyệt đối!';
         } else if (incident.notifyType === 'MOBILE_ONLY') {
           desc =
-            'Thiết bị di động của người dùng phát hiện té ngã. Đang chờ xác nhận hình ảnh.';
+            'Thiết bị di động phát hiện té ngã (hết thời gian đối soát CCTV).';
         } else if (incident.notifyType === 'CCTV_AGENT_WEIGHTED') {
           desc =
-            'Hệ thống CCTV phát hiện té ngã và đã được Gemini AI xác nhận.';
+            'Xác nhận té ngã đơn lẻ qua CCTV và được Gemini AI đồng ý xác nhận.';
         }
 
         document.getElementById('alert-desc').innerHTML = desc;
+      }
+
+      function triggerMobilePendingAlert(incident) {
+        document.getElementById('alert-card').className =
+          'md:col-span-12 bg-surface-container-highest border-2 border-error/40 rounded-xl p-8 flex flex-col items-center justify-center gap-6 relative overflow-hidden';
+        document.getElementById('alert-bg-pulse').style.display = 'block';
+
+        const iconContainer = document.getElementById('alert-icon-container');
+        iconContainer.className =
+          'w-24 h-24 rounded-full flex items-center justify-center alert-pulse border-4 border-error shadow-[0_0_30px_rgba(147,0,10,0.5)]';
+        iconContainer.innerHTML =
+          '<span class="material-symbols-outlined text-white text-5xl" style="font-variation-settings: \'FILL\' 1;">warning</span>';
+
+        document.getElementById('alert-title').textContent =
+          'Kết luận: Có té ngã (Mobile)';
+        document.getElementById('alert-title').className =
+          'font-headline-lg text-headline-lg text-error mb-2 tracking-widest uppercase';
+
+        document.getElementById('alert-desc').innerHTML =
+          'Thiết bị di động của người dùng phát hiện té ngã. Đang đối soát với CCTV (trong 10s)...';
+      }
+
+      function triggerCctvPendingStatus(incident) {
+        // Warning state (yellow/orange border, no warning pulse)
+        document.getElementById('alert-card').className =
+          'md:col-span-12 bg-surface-container border-2 border-amber-500/50 rounded-xl p-8 flex flex-col items-center justify-center gap-6 relative overflow-hidden warning-pulse';
+        document.getElementById('alert-bg-pulse').style.display = 'none';
+
+        const iconContainer = document.getElementById('alert-icon-container');
+        iconContainer.className =
+          'w-24 h-24 rounded-full flex items-center justify-center border-4 border-amber-500';
+        iconContainer.innerHTML =
+          '<span class="material-symbols-outlined text-amber-500 text-5xl">warning</span>';
+
+        document.getElementById('alert-title').textContent =
+          'Nghi vấn ngã (CCTV phát hiện)';
+        document.getElementById('alert-title').className =
+          'font-headline-lg text-headline-lg text-amber-500 mb-2 tracking-widest uppercase';
+        document.getElementById('alert-desc').textContent =
+          'Phát hiện chuyển động té ngã qua camera. Đang đối soát tín hiệu với Mobile App (trong 10s)...';
+      }
+
+      function triggerRejection(incident) {
+        document.getElementById('alert-card').className =
+          'md:col-span-12 bg-surface-container border border-outline-variant rounded-xl p-8 flex flex-col items-center justify-center gap-6 relative overflow-hidden';
+        document.getElementById('alert-bg-pulse').style.display = 'none';
+
+        const iconContainer = document.getElementById('alert-icon-container');
+        iconContainer.className =
+          'w-24 h-24 rounded-full flex items-center justify-center border-4 border-emerald-500';
+        iconContainer.innerHTML =
+          '<span class="material-symbols-outlined text-emerald-500 text-5xl" style="font-variation-settings: \'FILL\' 1;">check_circle</span>';
+
+        document.getElementById('alert-title').textContent =
+          'Bình thường (Bác bỏ bởi AI)';
+        document.getElementById('alert-title').className =
+          'font-headline-lg text-headline-lg text-emerald-400 mb-2 tracking-widest uppercase';
+        document.getElementById('alert-desc').textContent =
+          'Gemini AI đã phân tích hình ảnh và bác bỏ nghi vấn ngã của camera (Báo động giả).';
       }
 
       function resetUI() {
@@ -726,17 +799,14 @@
             if (data && data.data && data.data.length > 0) {
               const latest = data.data[0];
 
-              // If it's a new incident OR its state is finalized (correlated)
-              if (
-                latest.id !== lastIncidentId ||
-                latest.state === 'FINALIZED'
-              ) {
+              if (latest.id !== lastIncidentId || latest.state !== lastState) {
                 if (latest.id !== lastIncidentId) {
                   resetUI();
-                  addLog(`*** Nhận sự kiện Incident mới: ${latest.id} ***`);
+                  addLog(`*** Nhận sự kiện sự cố mới: ${latest.id} ***`);
                 }
 
                 lastIncidentId = latest.id;
+                lastState = latest.state;
 
                 if (latest.mobileDetected) {
                   updateMobileCard(latest);
@@ -748,10 +818,31 @@
 
                 if (latest.agentVerdict) {
                   updateLlmCard(latest);
+                } else if (
+                  latest.state === 'PENDING_CORRELATION' &&
+                  latest.cctvDetected &&
+                  !latest.mobileDetected
+                ) {
+                  document.getElementById('llm-result').textContent =
+                    'Đang chờ AI...';
+                  document.getElementById('llm-result').className =
+                    'font-headline-sm text-headline-sm text-primary-fixed-dim';
+                  document.getElementById('llm-conf').textContent = '0%';
                 }
 
+                // Handle Alert state machine based on workflow
                 if (latest.state === 'FINALIZED') {
                   triggerAlert(latest);
+                } else if (latest.state === 'REJECTED_BY_AGENT') {
+                  triggerRejection(latest);
+                } else if (latest.state === 'PENDING_CORRELATION') {
+                  if (latest.mobileDetected) {
+                    // Mobile is immediate alert!
+                    triggerMobilePendingAlert(latest);
+                  } else {
+                    // CCTV is normal warning (waiting for Gemini)
+                    triggerCctvPendingStatus(latest);
+                  }
                 }
               }
             }
