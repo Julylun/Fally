@@ -32,6 +32,7 @@ Copy `.env.example` to `.env` and adjust paths relative to the directory from wh
 | `CAMERA_ID` | Edge camera identifier sent to the backend |
 | `BACKEND_URL` | Base URL of the Nest backend (no trailing slash required) |
 | `BACKEND_SHARED_TOKEN` | Value for `X-Edge-Token` on outbound requests |
+| `SCOPE_ID` | Sent as `scopeId` in the event JSON payload for backend correlation (default `default`) |
 | `LOCAL_DB_PATH` | SQLite database file |
 | `LOCAL_SNAPSHOT_DIR` | Directory for JPEG snapshots |
 | `PORT` | HTTP port (default `8001`) |

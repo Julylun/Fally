@@ -7,6 +7,8 @@ import { HealthController } from './health.controller';
 import { EventsModule } from './events/events.module';
 import { CamerasModule } from './cameras/cameras.module';
 import { StorageModule } from './storage/storage.module';
+import { IncidentsModule } from './incidents/incidents.module';
+import { DemoModule } from './demo/demo.module';
 
 @Module({
   imports: [
@@ -19,8 +21,10 @@ import { StorageModule } from './storage/storage.module';
       inject: [ConfigService],
     }),
     StorageModule,
+    IncidentsModule,
     EventsModule,
     CamerasModule,
+    DemoModule,
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
     }),

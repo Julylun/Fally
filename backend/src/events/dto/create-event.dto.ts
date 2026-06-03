@@ -3,6 +3,7 @@ import {
   IsDateString,
   IsNotEmpty,
   IsNumber,
+  IsOptional,
   IsString,
   Min,
   ValidateNested,
@@ -41,4 +42,8 @@ export class CreateEventDto {
 
   @IsDateString()
   detectedAt: string;
+
+  @IsOptional()
+  @IsString()
+  scopeId?: string;
 }

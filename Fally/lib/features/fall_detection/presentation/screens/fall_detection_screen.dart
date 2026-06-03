@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:fally_app/features/fall_detection/data/backend_config.dart';
+import 'package:fally_app/features/fall_detection/data/fall_backend_client.dart';
 import 'package:fally_app/features/fall_detection/domain/services/fall_inference_service.dart';
 import 'package:flutter/material.dart';
 import 'package:sensors_plus/sensors_plus.dart';
@@ -60,6 +62,11 @@ class _FallDetectionScreenState extends State<FallDetectionScreen> {
   DateTime _accelerometerWindowStart = DateTime.now();
   DateTime _gyroscopeWindowStart = DateTime.now();
   final FallInferenceService _inferenceService = FallInferenceService();
+  final FallBackendConfig _backendConfig = FallBackendConfig.fromEnvironment();
+  late final FallBackendClient _backendClient = FallBackendClient(
+    config: _backendConfig,
+  );
+  DateTime? _lastReportedFallAt;
 
   final List<_SensorSample> _sensorWindow = <_SensorSample>[];
   int _samplesSinceLastInference = 0;
@@ -105,6 +112,7 @@ class _FallDetectionScreenState extends State<FallDetectionScreen> {
   void dispose() {
     _accelerometerSub?.cancel();
     _gyroscopeSub?.cancel();
+    _backendClient.close();
     _inferenceService.dispose();
     super.dispose();
   }
@@ -214,6 +222,24 @@ class _FallDetectionScreenState extends State<FallDetectionScreen> {
 
       if (!mounted) {
         return;
+      }
+      if (result.isFallDetected) {
+        final nowUtc = DateTime.now().toUtc();
+        final last = _lastReportedFallAt;
+        final cooldown = Duration(seconds: _backendConfig.fallCooldownSeconds);
+        final pastCooldown =
+            last == null || nowUtc.difference(last) >= cooldown;
+        if (pastCooldown) {
+          // Throttle on attempt (not only success): avoids spamming the
+          // network while the backend is down or slow; next try after cooldown.
+          _lastReportedFallAt = nowUtc;
+          unawaited(
+            _backendClient.reportMobileFall(
+              confidence: result.fallProbability,
+              detectedAtUtc: nowUtc,
+            ),
+          );
+        }
       }
       setState(() {
         _fallProbability = result.fallProbability;

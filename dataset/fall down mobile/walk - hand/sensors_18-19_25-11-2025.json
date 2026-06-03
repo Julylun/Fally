@@ -1,0 +1,1186 @@
+{
+  "duration": 6,
+  "sensors": [
+    {
+      "accelerometer": {
+        "x": 4.2011986,
+        "y": -1.9902302,
+        "z": 8.48794
+      },
+      "ambientLight": 29.6875,
+      "gyroscope": {
+        "x": -0.4070498,
+        "y": 2.8548858,
+        "z": -1.0862195
+      },
+      "orientation": {
+        "azimuth": 179.83621,
+        "pitch": 27.373606,
+        "roll": -74.00779
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073076274
+    },
+    {
+      "accelerometer": {
+        "x": 6.018547,
+        "y": -2.4305096,
+        "z": 8.315657
+      },
+      "ambientLight": 26.1375,
+      "gyroscope": {
+        "x": -0.5405382,
+        "y": 1.8099319,
+        "z": -0.7408655
+      },
+      "orientation": {
+        "azimuth": 184.31715,
+        "pitch": 23.797337,
+        "roll": -61.653973
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073076374
+    },
+    {
+      "accelerometer": {
+        "x": 6.018547,
+        "y": -2.4305096,
+        "z": 8.315657
+      },
+      "ambientLight": 23.725,
+      "gyroscope": {
+        "x": 0.08933222,
+        "y": 1.5367622,
+        "z": -0.467418
+      },
+      "orientation": {
+        "azimuth": 188.29793,
+        "pitch": 17.148563,
+        "roll": -48.67627
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073076475
+    },
+    {
+      "accelerometer": {
+        "x": 5.89412,
+        "y": -3.7621155,
+        "z": 8.2678
+      },
+      "ambientLight": 27.112501,
+      "gyroscope": {
+        "x": -0.5817592,
+        "y": 0.47547823,
+        "z": -0.5383983
+      },
+      "orientation": {
+        "azimuth": 192.86375,
+        "pitch": 12.99155,
+        "roll": -39.89504
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073076576
+    },
+    {
+      "accelerometer": {
+        "x": 5.89412,
+        "y": -3.7621155,
+        "z": 8.2678
+      },
+      "ambientLight": 32.275,
+      "gyroscope": {
+        "x": -0.40003502,
+        "y": -0.09095683,
+        "z": 0.43418056
+      },
+      "orientation": {
+        "azimuth": 195.60777,
+        "pitch": 13.986319,
+        "roll": -34.58235
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073076675
+    },
+    {
+      "accelerometer": {
+        "x": 5.89412,
+        "y": -3.7621155,
+        "z": 8.2678
+      },
+      "ambientLight": 34.6875,
+      "gyroscope": {
+        "x": -0.39615557,
+        "y": -0.604508,
+        "z": 0.7778014
+      },
+      "orientation": {
+        "azimuth": 196.945,
+        "pitch": 16.151102,
+        "roll": -33.51991
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073076776
+    },
+    {
+      "accelerometer": {
+        "x": 4.7778687,
+        "y": -6.594021,
+        "z": 2.3754747
+      },
+      "ambientLight": 38.8875,
+      "gyroscope": {
+        "x": -1.2699069,
+        "y": -1.158637,
+        "z": 1.3106073
+      },
+      "orientation": {
+        "azimuth": 196.05226,
+        "pitch": 21.059902,
+        "roll": -35.230965
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073076877
+    },
+    {
+      "accelerometer": {
+        "x": 4.7778687,
+        "y": -6.594021,
+        "z": 2.3754747
+      },
+      "ambientLight": 43.725002,
+      "gyroscope": {
+        "x": -0.43309572,
+        "y": -1.7907368,
+        "z": 0.8761009
+      },
+      "orientation": {
+        "azimuth": 194.72806,
+        "pitch": 28.12353,
+        "roll": -41.707417
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073076977
+    },
+    {
+      "accelerometer": {
+        "x": 8.931808,
+        "y": -6.053243,
+        "z": 0.1369891
+      },
+      "ambientLight": 36.95,
+      "gyroscope": {
+        "x": 0.16485846,
+        "y": -1.8088853,
+        "z": -0.03382083
+      },
+      "orientation": {
+        "azimuth": 192.93437,
+        "pitch": 35.124355,
+        "roll": -51.92824
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073077089
+    },
+    {
+      "accelerometer": {
+        "x": 8.931808,
+        "y": -6.053243,
+        "z": 0.1369891
+      },
+      "ambientLight": 20.175001,
+      "gyroscope": {
+        "x": 0.2804378,
+        "y": -0.7768986,
+        "z": -0.025393303
+      },
+      "orientation": {
+        "azimuth": 190.9301,
+        "pitch": 38.440144,
+        "roll": -60.678623
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073077205
+    },
+    {
+      "accelerometer": {
+        "x": 10.155738,
+        "y": -4.4727836,
+        "z": 5.4496536
+      },
+      "ambientLight": 20.175001,
+      "gyroscope": {
+        "x": 0.38333434,
+        "y": 0.18930744,
+        "z": -0.37730646
+      },
+      "orientation": {
+        "azimuth": 189.11606,
+        "pitch": 38.818783,
+        "roll": -65.19881
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073077306
+    },
+    {
+      "accelerometer": {
+        "x": 10.155738,
+        "y": -4.4727836,
+        "z": 5.4496536
+      },
+      "ambientLight": 6.2875,
+      "gyroscope": {
+        "x": 0.37764394,
+        "y": 0.34987336,
+        "z": -0.7437762
+      },
+      "orientation": {
+        "azimuth": 187.97833,
+        "pitch": 35.844925,
+        "roll": -66.56457
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073077406
+    },
+    {
+      "accelerometer": {
+        "x": 11.735599,
+        "y": -4.8586264,
+        "z": 3.6634114
+      },
+      "ambientLight": 6.2875,
+      "gyroscope": {
+        "x": -0.5977136,
+        "y": -0.042704016,
+        "z": -0.8195345
+      },
+      "orientation": {
+        "azimuth": 188.07071,
+        "pitch": 31.681377,
+        "roll": -67.09341
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073077506
+    },
+    {
+      "accelerometer": {
+        "x": 11.735599,
+        "y": -4.8586264,
+        "z": 3.6634114
+      },
+      "ambientLight": 4.3625,
+      "gyroscope": {
+        "x": 0.15457317,
+        "y": -0.17479774,
+        "z": -0.3300725
+      },
+      "orientation": {
+        "azimuth": 188.61739,
+        "pitch": 28.511955,
+        "roll": -67.28075
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073077606
+    },
+    {
+      "accelerometer": {
+        "x": 10.107881,
+        "y": -6.5054865,
+        "z": 1.1282159
+      },
+      "ambientLight": 4.3625,
+      "gyroscope": {
+        "x": 0.033367302,
+        "y": -1.0101131,
+        "z": 0.46029463
+      },
+      "orientation": {
+        "azimuth": 190.97272,
+        "pitch": 27.168985,
+        "roll": -69.593445
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073077706
+    },
+    {
+      "accelerometer": {
+        "x": 10.107881,
+        "y": -6.5054865,
+        "z": 1.1282159
+      },
+      "ambientLight": 35.175,
+      "gyroscope": {
+        "x": 1.1148397,
+        "y": -1.1182954,
+        "z": 1.1404066
+      },
+      "orientation": {
+        "azimuth": 187.9468,
+        "pitch": 27.30399,
+        "roll": -70.10123
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073077807
+    },
+    {
+      "accelerometer": {
+        "x": 8.379066,
+        "y": -9.440882,
+        "z": -0.39182472
+      },
+      "ambientLight": 35.175,
+      "gyroscope": {
+        "x": 0.9051512,
+        "y": -1.51997,
+        "z": 1.0183979
+      },
+      "orientation": {
+        "azimuth": 183.90123,
+        "pitch": 28.981878,
+        "roll": -72.99868
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073077908
+    },
+    {
+      "accelerometer": {
+        "x": 8.379066,
+        "y": -9.440882,
+        "z": -0.39182472
+      },
+      "ambientLight": 37.275,
+      "gyroscope": {
+        "x": 0.81966543,
+        "y": -1.2962786,
+        "z": 1.0454733
+      },
+      "orientation": {
+        "azimuth": 178.6214,
+        "pitch": 32.875553,
+        "roll": -77.005684
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073078009
+    },
+    {
+      "accelerometer": {
+        "x": 7.031309,
+        "y": -5.011767,
+        "z": -6.355935
+      },
+      "ambientLight": 59.2125,
+      "gyroscope": {
+        "x": 0.16304435,
+        "y": -1.7246027,
+        "z": 0.42627898
+      },
+      "orientation": {
+        "azimuth": 169.7031,
+        "pitch": 38.22457,
+        "roll": -82.41585
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073078109
+    },
+    {
+      "accelerometer": {
+        "x": 7.031309,
+        "y": -5.011767,
+        "z": -6.355935
+      },
+      "ambientLight": 20.175001,
+      "gyroscope": {
+        "x": 0.012863797,
+        "y": -2.054178,
+        "z": -0.7755359
+      },
+      "orientation": {
+        "azimuth": 165.34163,
+        "pitch": 40.571873,
+        "roll": -91.29461
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073078241
+    },
+    {
+      "accelerometer": {
+        "x": 7.031309,
+        "y": -5.011767,
+        "z": -6.355935
+      },
+      "ambientLight": 20.175001,
+      "gyroscope": {
+        "x": 0.21579304,
+        "y": -0.3143108,
+        "z": -0.54589856
+      },
+      "orientation": {
+        "azimuth": 160.82866,
+        "pitch": 40.93299,
+        "roll": -96.59496
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073078342
+    },
+    {
+      "accelerometer": {
+        "x": 11.496316,
+        "y": -6.053243,
+        "z": -2.6213372
+      },
+      "ambientLight": 6.6125,
+      "gyroscope": {
+        "x": -0.20289518,
+        "y": 0.080010414,
+        "z": -0.63525313
+      },
+      "orientation": {
+        "azimuth": 159.41719,
+        "pitch": 38.138798,
+        "roll": -100.14134
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073078442
+    },
+    {
+      "accelerometer": {
+        "x": 11.496316,
+        "y": -6.053243,
+        "z": -2.6213372
+      },
+      "ambientLight": 6.6125,
+      "gyroscope": {
+        "x": 0.34144795,
+        "y": 0.12342879,
+        "z": -0.74890554
+      },
+      "orientation": {
+        "azimuth": 158.4511,
+        "pitch": 33.718807,
+        "roll": -101.178696
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073078542
+    },
+    {
+      "accelerometer": {
+        "x": 10.622338,
+        "y": -2.39701,
+        "z": -1.689931
+      },
+      "ambientLight": 14.2,
+      "gyroscope": {
+        "x": 1.2354089,
+        "y": -0.21805216,
+        "z": -1.3115857
+      },
+      "orientation": {
+        "azimuth": 156.41345,
+        "pitch": 28.002878,
+        "roll": -101.70123
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073078642
+    },
+    {
+      "accelerometer": {
+        "x": 10.622338,
+        "y": -2.39701,
+        "z": -1.689931
+      },
+      "ambientLight": 14.2,
+      "gyroscope": {
+        "x": 0.80535376,
+        "y": -0.30956793,
+        "z": 0.31979784
+      },
+      "orientation": {
+        "azimuth": 152.67345,
+        "pitch": 25.170761,
+        "roll": -101.54811
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073078742
+    },
+    {
+      "accelerometer": {
+        "x": 10.622338,
+        "y": -2.39701,
+        "z": -1.689931
+      },
+      "ambientLight": 20.325,
+      "gyroscope": {
+        "x": 1.2839471,
+        "y": -0.015198507,
+        "z": 0.8412549
+      },
+      "orientation": {
+        "azimuth": 145.1625,
+        "pitch": 26.293058,
+        "roll": -97.24269
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073078843
+    },
+    {
+      "accelerometer": {
+        "x": 7.9770727,
+        "y": -8.002197,
+        "z": -0.33200413
+      },
+      "ambientLight": 20.325,
+      "gyroscope": {
+        "x": 0.18274087,
+        "y": 0.04746393,
+        "z": 1.1955101
+      },
+      "orientation": {
+        "azimuth": 141.03365,
+        "pitch": 28.815445,
+        "roll": -95.5564
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073078944
+    },
+    {
+      "accelerometer": {
+        "x": 7.9770727,
+        "y": -8.002197,
+        "z": -0.33200413
+      },
+      "ambientLight": 31.300001,
+      "gyroscope": {
+        "x": -0.31974462,
+        "y": 0.008182665,
+        "z": 1.9658571
+      },
+      "orientation": {
+        "azimuth": 138.97491,
+        "pitch": 33.910316,
+        "roll": -94.718636
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073079044
+    },
+    {
+      "accelerometer": {
+        "x": 2.687738,
+        "y": -10.513465,
+        "z": 0.58923256
+      },
+      "ambientLight": 31.300001,
+      "gyroscope": {
+        "x": 0.24132156,
+        "y": -0.107843824,
+        "z": 1.9698313
+      },
+      "orientation": {
+        "azimuth": 138.77809,
+        "pitch": 42.35131,
+        "roll": -94.408424
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073079144
+    },
+    {
+      "accelerometer": {
+        "x": 2.687738,
+        "y": -10.513465,
+        "z": 0.58923256
+      },
+      "ambientLight": 18.075,
+      "gyroscope": {
+        "x": -0.5259497,
+        "y": -0.54582614,
+        "z": -0.69702446
+      },
+      "orientation": {
+        "azimuth": 138.94716,
+        "pitch": 49.087452,
+        "roll": -95.864494
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073079245
+    },
+    {
+      "accelerometer": {
+        "x": 9.908679,
+        "y": -7.652247,
+        "z": -0.53359944
+      },
+      "ambientLight": 18.075,
+      "gyroscope": {
+        "x": -0.10195648,
+        "y": 0.69636124,
+        "z": -0.6303761
+      },
+      "orientation": {
+        "azimuth": 139.12561,
+        "pitch": 53.27877,
+        "roll": -96.305595
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073079346
+    },
+    {
+      "accelerometer": {
+        "x": 9.908679,
+        "y": -7.652247,
+        "z": -0.53359944
+      },
+      "ambientLight": 14.85,
+      "gyroscope": {
+        "x": -0.78480446,
+        "y": 0.52943206,
+        "z": -1.6260955
+      },
+      "orientation": {
+        "azimuth": 143.27054,
+        "pitch": 52.335377,
+        "roll": -98.299866
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073079445
+    },
+    {
+      "accelerometer": {
+        "x": 9.908679,
+        "y": -7.652247,
+        "z": -0.53359944
+      },
+      "ambientLight": 14.85,
+      "gyroscope": {
+        "x": -0.33388808,
+        "y": 0.10086631,
+        "z": -1.527285
+      },
+      "orientation": {
+        "azimuth": 147.62436,
+        "pitch": 47.60131,
+        "roll": -99.945854
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073079546
+    },
+    {
+      "accelerometer": {
+        "x": 13.265809,
+        "y": -3.4911282,
+        "z": -0.4642076
+      },
+      "ambientLight": 15.4875,
+      "gyroscope": {
+        "x": 0.6999873,
+        "y": 0.12999855,
+        "z": -1.3350084
+      },
+      "orientation": {
+        "azimuth": 148.06908,
+        "pitch": 39.172405,
+        "roll": -98.427925
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073079647
+    },
+    {
+      "accelerometer": {
+        "x": 13.265809,
+        "y": -3.4911282,
+        "z": -0.4642076
+      },
+      "ambientLight": 15.4875,
+      "gyroscope": {
+        "x": 0.48279217,
+        "y": 0.27781034,
+        "z": -0.09509181
+      },
+      "orientation": {
+        "azimuth": 145.55254,
+        "pitch": 31.281044,
+        "roll": -96.00634
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073079747
+    },
+    {
+      "accelerometer": {
+        "x": 12.183655,
+        "y": -9.915258,
+        "z": -0.83030945
+      },
+      "ambientLight": 13.075,
+      "gyroscope": {
+        "x": -0.20563976,
+        "y": -0.040575843,
+        "z": 0.98246706
+      },
+      "orientation": {
+        "azimuth": 145.0927,
+        "pitch": 29.85458,
+        "roll": -95.11978
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073079848
+    },
+    {
+      "accelerometer": {
+        "x": 12.183655,
+        "y": -9.915258,
+        "z": -0.83030945
+      },
+      "ambientLight": 13.075,
+      "gyroscope": {
+        "x": 0.8910024,
+        "y": -0.70299274,
+        "z": 0.5192405
+      },
+      "orientation": {
+        "azimuth": 141.19012,
+        "pitch": 29.109043,
+        "roll": -94.58902
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073079949
+    },
+    {
+      "accelerometer": {
+        "x": 7.292127,
+        "y": -10.044471,
+        "z": 0.14895321
+      },
+      "ambientLight": 31.625,
+      "gyroscope": {
+        "x": 0.54131854,
+        "y": -0.18471467,
+        "z": 1.0112385
+      },
+      "orientation": {
+        "azimuth": 137.55438,
+        "pitch": 31.777557,
+        "roll": -93.93072
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073080049
+    },
+    {
+      "accelerometer": {
+        "x": 7.292127,
+        "y": -10.044471,
+        "z": 0.14895321
+      },
+      "ambientLight": 31.625,
+      "gyroscope": {
+        "x": 0.45439237,
+        "y": -0.06441161,
+        "z": 1.1829413
+      },
+      "orientation": {
+        "azimuth": 134.93451,
+        "pitch": 37.104305,
+        "roll": -92.24228
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073080149
+    },
+    {
+      "accelerometer": {
+        "x": 7.292127,
+        "y": -10.044471,
+        "z": 0.14895321
+      },
+      "ambientLight": 27.9125,
+      "gyroscope": {
+        "x": 0.08994438,
+        "y": -0.8125059,
+        "z": 0.90362453
+      },
+      "orientation": {
+        "azimuth": 133.28816,
+        "pitch": 43.844086,
+        "roll": -92.764244
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073080249
+    },
+    {
+      "accelerometer": {
+        "x": 6.5569324,
+        "y": -3.886542,
+        "z": -8.010572
+      },
+      "ambientLight": 27.9125,
+      "gyroscope": {
+        "x": -1.4836282,
+        "y": -1.5479982,
+        "z": -0.5933784
+      },
+      "orientation": {
+        "azimuth": 133.63876,
+        "pitch": 48.0117,
+        "roll": -98.66536
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073080350
+    },
+    {
+      "accelerometer": {
+        "x": 6.5569324,
+        "y": -3.886542,
+        "z": -8.010572
+      },
+      "ambientLight": 11.6125,
+      "gyroscope": {
+        "x": -1.7806154,
+        "y": -0.7071575,
+        "z": -2.082832
+      },
+      "orientation": {
+        "azimuth": 136.16844,
+        "pitch": 45.335514,
+        "roll": -106.97297
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073080450
+    },
+    {
+      "accelerometer": {
+        "x": 11.986845,
+        "y": -1.5930216,
+        "z": -1.0576276
+      },
+      "ambientLight": 11.6125,
+      "gyroscope": {
+        "x": -0.75136906,
+        "y": 2.030798,
+        "z": -1.7035562
+      },
+      "orientation": {
+        "azimuth": 139.03604,
+        "pitch": 39.913815,
+        "roll": -107.832695
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073080551
+    },
+    {
+      "accelerometer": {
+        "x": 11.986845,
+        "y": -1.5930216,
+        "z": -1.0576276
+      },
+      "ambientLight": 9.3625,
+      "gyroscope": {
+        "x": -0.5253599,
+        "y": 1.1466208,
+        "z": -1.0172833
+      },
+      "orientation": {
+        "azimuth": 143.17407,
+        "pitch": 31.67792,
+        "roll": -107.243095
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073080652
+    },
+    {
+      "accelerometer": {
+        "x": 11.986845,
+        "y": -1.5930216,
+        "z": -1.0576276
+      },
+      "ambientLight": 9.3625,
+      "gyroscope": {
+        "x": -0.14221826,
+        "y": 0.8033416,
+        "z": -0.9891454
+      },
+      "orientation": {
+        "azimuth": 146.18452,
+        "pitch": 21.35416,
+        "roll": -105.94369
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073080751
+    },
+    {
+      "accelerometer": {
+        "x": 12.853645,
+        "y": -0.93679005,
+        "z": 1.032503
+      },
+      "ambientLight": 11.3,
+      "gyroscope": {
+        "x": 0.26601648,
+        "y": 0.69708306,
+        "z": -0.45430934
+      },
+      "orientation": {
+        "azimuth": 147.07292,
+        "pitch": 13.17218,
+        "roll": -102.8624
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073080852
+    },
+    {
+      "accelerometer": {
+        "x": 12.853645,
+        "y": -0.93679005,
+        "z": 1.032503
+      },
+      "ambientLight": 11.3,
+      "gyroscope": {
+        "x": -0.4959679,
+        "y": -0.51470625,
+        "z": 0.53047436
+      },
+      "orientation": {
+        "azimuth": 147.2591,
+        "pitch": 10.49484,
+        "roll": -99.92028
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073080953
+    },
+    {
+      "accelerometer": {
+        "x": 10.239487,
+        "y": -7.1377897,
+        "z": -0.35114673
+      },
+      "ambientLight": 11.3,
+      "gyroscope": {
+        "x": 0.39672086,
+        "y": 0.06510893,
+        "z": 1.1648673
+      },
+      "orientation": {
+        "azimuth": 145.73338,
+        "pitch": 11.566188,
+        "roll": -94.99555
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073081054
+    },
+    {
+      "accelerometer": {
+        "x": 10.239487,
+        "y": -7.1377897,
+        "z": -0.35114673
+      },
+      "ambientLight": 32.1125,
+      "gyroscope": {
+        "x": 0.37867877,
+        "y": -0.47428903,
+        "z": 1.2630156
+      },
+      "orientation": {
+        "azimuth": 145.60509,
+        "pitch": 15.790636,
+        "roll": -94.96355
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073081155
+    },
+    {
+      "accelerometer": {
+        "x": 5.2331033,
+        "y": -8.193623,
+        "z": -0.8063812
+      },
+      "ambientLight": 32.1125,
+      "gyroscope": {
+        "x": 0.760924,
+        "y": -0.46986982,
+        "z": 1.1994897
+      },
+      "orientation": {
+        "azimuth": 144.35226,
+        "pitch": 21.733395,
+        "roll": -95.890945
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073081255
+    },
+    {
+      "accelerometer": {
+        "x": 5.2331033,
+        "y": -8.193623,
+        "z": -0.8063812
+      },
+      "ambientLight": 30.975,
+      "gyroscope": {
+        "x": 0.7334653,
+        "y": -0.124883056,
+        "z": 1.0044695
+      },
+      "orientation": {
+        "azimuth": 142.47835,
+        "pitch": 28.85464,
+        "roll": -96.899765
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073081355
+    },
+    {
+      "accelerometer": {
+        "x": 5.2331033,
+        "y": -8.193623,
+        "z": -0.8063812
+      },
+      "ambientLight": 30.975,
+      "gyroscope": {
+        "x": -0.63013977,
+        "y": -1.2364991,
+        "z": 0.21127054
+      },
+      "orientation": {
+        "azimuth": 142.3493,
+        "pitch": 35.18828,
+        "roll": -102.16475
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073081456
+    },
+    {
+      "accelerometer": {
+        "x": 6.437291,
+        "y": -4.4632125,
+        "z": -2.5423741
+      },
+      "ambientLight": 37.7625,
+      "gyroscope": {
+        "x": -0.25972563,
+        "y": 0.0043745213,
+        "z": -0.64853424
+      },
+      "orientation": {
+        "azimuth": 140.77588,
+        "pitch": 38.098225,
+        "roll": -104.020744
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073081557
+    },
+    {
+      "accelerometer": {
+        "x": 6.437291,
+        "y": -4.4632125,
+        "z": -2.5423741
+      },
+      "ambientLight": 20.175001,
+      "gyroscope": {
+        "x": -0.28119475,
+        "y": 1.1785764,
+        "z": -1.6803081
+      },
+      "orientation": {
+        "azimuth": 139.61201,
+        "pitch": 36.273994,
+        "roll": -103.50587
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073081657
+    },
+    {
+      "accelerometer": {
+        "x": 11.3168545,
+        "y": -3.2446675,
+        "z": -1.5176477
+      },
+      "ambientLight": 20.175001,
+      "gyroscope": {
+        "x": -0.060281947,
+        "y": 0.7706759,
+        "z": -0.9795756
+      },
+      "orientation": {
+        "azimuth": 139.66808,
+        "pitch": 32.03059,
+        "roll": -101.02406
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073081757
+    },
+    {
+      "accelerometer": {
+        "x": 11.3168545,
+        "y": -3.2446675,
+        "z": -1.5176477
+      },
+      "ambientLight": 7.75,
+      "gyroscope": {
+        "x": -0.43555075,
+        "y": 0.12956952,
+        "z": -0.08968887
+      },
+      "orientation": {
+        "azimuth": 141.38037,
+        "pitch": 26.724356,
+        "roll": -99.723335
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073081858
+    },
+    {
+      "accelerometer": {
+        "x": 13.519448,
+        "y": -4.221537,
+        "z": 0.3379862
+      },
+      "ambientLight": 7.75,
+      "gyroscope": {
+        "x": 0.45869023,
+        "y": 0.9291999,
+        "z": -0.33381036
+      },
+      "orientation": {
+        "azimuth": 141.46474,
+        "pitch": 21.479189,
+        "roll": -96.521835
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073081958
+    },
+    {
+      "accelerometer": {
+        "x": 13.519448,
+        "y": -4.221537,
+        "z": 0.3379862
+      },
+      "ambientLight": 17.1,
+      "gyroscope": {
+        "x": 0.024109373,
+        "y": 0.21583669,
+        "z": 0.09567842
+      },
+      "orientation": {
+        "azimuth": 140.11531,
+        "pitch": 18.276882,
+        "roll": -92.03799
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073082059
+    },
+    {
+      "accelerometer": {
+        "x": 13.519448,
+        "y": -4.221537,
+        "z": 0.3379862
+      },
+      "ambientLight": 17.1,
+      "gyroscope": {
+        "x": -0.035061114,
+        "y": 0.2573132,
+        "z": 0.27525097
+      },
+      "orientation": {
+        "azimuth": 140.19328,
+        "pitch": 18.058455,
+        "roll": -90.715965
+      },
+      "proximity": 5.0,
+      "timestamp": 1764073082160
+    }
+  ],
+  "type": "walk"
+}

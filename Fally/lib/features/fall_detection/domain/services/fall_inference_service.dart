@@ -84,9 +84,7 @@ class FallInferenceService {
       final outputVectors = <List<double>>[];
       final outputKinds = <String>[];
       for (final output in outputs) {
-        outputKinds.add(
-          '${output.runtimeType}/${output?.value.runtimeType}',
-        );
+        outputKinds.add('${output.runtimeType}/${output?.value.runtimeType}');
         outputVectors.add(_flattenNumbers(output?.value));
       }
       final probability = _deriveFallProbabilityFromOutputs(outputVectors);
@@ -116,10 +114,20 @@ class FallInferenceService {
     final channels = [accX, accY, accZ, gyroX, gyroY, gyroZ];
     final features = <double>[];
 
+    // Compute means
     for (final channel in channels) {
       features.add(_mean(channel));
+    }
+    // Compute stds
+    for (final channel in channels) {
       features.add(_std(channel));
+    }
+    // Compute maxs
+    for (final channel in channels) {
       features.add(_max(channel));
+    }
+    // Compute mins
+    for (final channel in channels) {
       features.add(_min(channel));
     }
 

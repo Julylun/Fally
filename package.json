@@ -1,0 +1,25 @@
+{
+  "name": "fallyproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julylun/Fally.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Julylun/Fally/issues"
+  },
+  "homepage": "https://github.com/Julylun/Fally#readme",
+  "dependencies": {
+    "jimp": "^1.6.1",
+    "onnxruntime-node": "^1.26.0"
+  }
+}

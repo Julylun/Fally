@@ -29,6 +29,7 @@ def _backend_payload_row(row: dict[str, Any], settings: Settings) -> dict[str, A
         if bbox
         else {"x1": 0.0, "y1": 0.0, "x2": 0.0, "y2": 0.0},
         "detectedAt": row["detected_at"],
+        "scopeId": settings.scope_id,
     }
     return cam_payload
 

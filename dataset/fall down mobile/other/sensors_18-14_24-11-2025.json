@@ -1,0 +1,806 @@
+{
+  "duration": 8,
+  "sensors": [
+    {
+      "ambientLight": 40.4,
+      "gyroscope": {
+        "x": 0.45944047,
+        "y": -0.4908913,
+        "z": -0.083932884
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968681245
+    },
+    {
+      "ambientLight": 40.4,
+      "gyroscope": {
+        "x": 0.45944047,
+        "y": -0.4908913,
+        "z": -0.083932884
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968681354
+    },
+    {
+      "ambientLight": 40.4,
+      "gyroscope": {
+        "x": -0.18572049,
+        "y": -0.34716344,
+        "z": -0.05092871
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968681455
+    },
+    {
+      "ambientLight": 39.0,
+      "gyroscope": {
+        "x": -0.18572049,
+        "y": -0.34716344,
+        "z": -0.05092871
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968681554
+    },
+    {
+      "ambientLight": 39.0,
+      "gyroscope": {
+        "x": 0.2965489,
+        "y": -0.91462237,
+        "z": -0.11054915
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968681655
+    },
+    {
+      "ambientLight": 39.0,
+      "gyroscope": {
+        "x": 0.2965489,
+        "y": -0.91462237,
+        "z": -0.11054915
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968681755
+    },
+    {
+      "ambientLight": 39.0,
+      "gyroscope": {
+        "x": 0.6808878,
+        "y": -2.0442169,
+        "z": -0.86432195
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968681856
+    },
+    {
+      "ambientLight": 31.2,
+      "gyroscope": {
+        "x": 0.6808878,
+        "y": -2.0442169,
+        "z": -0.86432195
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968681956
+    },
+    {
+      "ambientLight": 31.2,
+      "gyroscope": {
+        "x": 1.7157285,
+        "y": -0.46001643,
+        "z": -0.54386204
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968682056
+    },
+    {
+      "ambientLight": 31.2,
+      "gyroscope": {
+        "x": 1.7157285,
+        "y": -0.46001643,
+        "z": -0.54386204
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968682157
+    },
+    {
+      "ambientLight": 20.4,
+      "gyroscope": {
+        "x": 0.26993263,
+        "y": -0.90397584,
+        "z": 0.03954916
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968682287
+    },
+    {
+      "ambientLight": 20.4,
+      "gyroscope": {
+        "x": 0.26993263,
+        "y": -0.90397584,
+        "z": 0.03954916
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968682388
+    },
+    {
+      "ambientLight": 20.4,
+      "gyroscope": {
+        "x": -0.0036651914,
+        "y": 0.002024582,
+        "z": 0.0033510323
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968682488
+    },
+    {
+      "ambientLight": 30.0,
+      "gyroscope": {
+        "x": -0.0036651914,
+        "y": 0.002024582,
+        "z": 0.0033510323
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968682588
+    },
+    {
+      "ambientLight": 30.0,
+      "gyroscope": {
+        "x": -0.0026005406,
+        "y": -8.726646E-5,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968682689
+    },
+    {
+      "ambientLight": 30.0,
+      "gyroscope": {
+        "x": -0.0026005406,
+        "y": -8.726646E-5,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968682789
+    },
+    {
+      "ambientLight": 30.0,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": -0.0043458696,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968682890
+    },
+    {
+      "ambientLight": 34.4,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": -0.0043458696,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968682991
+    },
+    {
+      "ambientLight": 34.4,
+      "gyroscope": {
+        "x": -0.0047298423,
+        "y": 0.002024582,
+        "z": 0.0022863813
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968683091
+    },
+    {
+      "ambientLight": 34.4,
+      "gyroscope": {
+        "x": -0.0047298423,
+        "y": 0.002024582,
+        "z": 0.0022863813
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968683192
+    },
+    {
+      "ambientLight": 35.3,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": -0.0011519173,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968683304
+    },
+    {
+      "ambientLight": 35.3,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": -0.0011519173,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968683405
+    },
+    {
+      "ambientLight": 35.3,
+      "gyroscope": {
+        "x": -0.0015358897,
+        "y": 0.002024582,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968683505
+    },
+    {
+      "ambientLight": 35.3,
+      "gyroscope": {
+        "x": -0.0015358897,
+        "y": 0.002024582,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968683606
+    },
+    {
+      "ambientLight": 39.4,
+      "gyroscope": {
+        "x": -0.0026005406,
+        "y": 0.0041538836,
+        "z": 0.0012217305
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968683706
+    },
+    {
+      "ambientLight": 39.4,
+      "gyroscope": {
+        "x": -0.0026005406,
+        "y": 0.0041538836,
+        "z": 0.0012217305
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968683807
+    },
+    {
+      "ambientLight": 39.4,
+      "gyroscope": {
+        "x": -0.0026005406,
+        "y": 0.002024582,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968683906
+    },
+    {
+      "ambientLight": 38.4,
+      "gyroscope": {
+        "x": -0.0026005406,
+        "y": 0.002024582,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968684007
+    },
+    {
+      "ambientLight": 38.4,
+      "gyroscope": {
+        "x": -0.0036651914,
+        "y": 9.5993106E-4,
+        "z": 0.0012217305
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968684108
+    },
+    {
+      "ambientLight": 38.4,
+      "gyroscope": {
+        "x": -0.0026005406,
+        "y": 0.002024582,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968684208
+    },
+    {
+      "ambientLight": 41.5,
+      "gyroscope": {
+        "x": -0.0026005406,
+        "y": 0.002024582,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968684311
+    },
+    {
+      "ambientLight": 41.5,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": 9.5993106E-4,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968684412
+    },
+    {
+      "ambientLight": 41.5,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": 9.5993106E-4,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968684512
+    },
+    {
+      "ambientLight": 41.5,
+      "gyroscope": {
+        "x": -0.0015358897,
+        "y": -0.0011519173,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968684613
+    },
+    {
+      "ambientLight": 40.5,
+      "gyroscope": {
+        "x": -0.0015358897,
+        "y": -0.0011519173,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968684714
+    },
+    {
+      "ambientLight": 40.5,
+      "gyroscope": {
+        "x": 0.015481071,
+        "y": -0.005410521,
+        "z": -0.0051487214
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968684815
+    },
+    {
+      "ambientLight": 40.5,
+      "gyroscope": {
+        "x": 0.015481071,
+        "y": -0.005410521,
+        "z": -0.0051487214
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968684915
+    },
+    {
+      "ambientLight": 39.100002,
+      "gyroscope": {
+        "x": -4.712389E-4,
+        "y": 0.010541788,
+        "z": 0.0033510323
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968685015
+    },
+    {
+      "ambientLight": 39.100002,
+      "gyroscope": {
+        "x": -4.712389E-4,
+        "y": 0.010541788,
+        "z": 0.0033510323
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968685115
+    },
+    {
+      "ambientLight": 39.100002,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": 0.0030892328,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968685215
+    },
+    {
+      "ambientLight": 39.100002,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": 0.0030892328,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968685319
+    },
+    {
+      "ambientLight": 27.4,
+      "gyroscope": {
+        "x": 0.008028515,
+        "y": -0.0075398223,
+        "z": -0.00408407
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968685421
+    },
+    {
+      "ambientLight": 27.4,
+      "gyroscope": {
+        "x": 0.008028515,
+        "y": -0.0075398223,
+        "z": -0.00408407
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968685521
+    },
+    {
+      "ambientLight": 27.4,
+      "gyroscope": {
+        "x": -4.712389E-4,
+        "y": 0.0052185343,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968685621
+    },
+    {
+      "ambientLight": 26.9,
+      "gyroscope": {
+        "x": -4.712389E-4,
+        "y": 0.0052185343,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968685722
+    },
+    {
+      "ambientLight": 26.9,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": -0.0022165682,
+        "z": -0.0019547688
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968685822
+    },
+    {
+      "ambientLight": 26.9,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": -0.0022165682,
+        "z": -0.0019547688
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968685923
+    },
+    {
+      "ambientLight": 26.9,
+      "gyroscope": {
+        "x": -0.008988446,
+        "y": -8.726646E-5,
+        "z": 0.0054803337
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968686024
+    },
+    {
+      "ambientLight": 26.800001,
+      "gyroscope": {
+        "x": -0.008988446,
+        "y": -8.726646E-5,
+        "z": 0.0054803337
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968686124
+    },
+    {
+      "ambientLight": 26.800001,
+      "gyroscope": {
+        "x": 5.7595863E-4,
+        "y": 9.5993106E-4,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968686224
+    },
+    {
+      "ambientLight": 26.800001,
+      "gyroscope": {
+        "x": 5.7595863E-4,
+        "y": 9.5993106E-4,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968686324
+    },
+    {
+      "ambientLight": 26.0,
+      "gyroscope": {
+        "x": 0.0037699111,
+        "y": 0.0041538836,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968686424
+    },
+    {
+      "ambientLight": 26.0,
+      "gyroscope": {
+        "x": 0.0037699111,
+        "y": 0.0041538836,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968686525
+    },
+    {
+      "ambientLight": 26.0,
+      "gyroscope": {
+        "x": 0.0037699111,
+        "y": 0.0041538836,
+        "z": -0.0019547688
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968686625
+    },
+    {
+      "ambientLight": 26.0,
+      "gyroscope": {
+        "x": 0.0037699111,
+        "y": 0.0041538836,
+        "z": -0.0019547688
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968686725
+    },
+    {
+      "ambientLight": 26.800001,
+      "gyroscope": {
+        "x": 0.005899213,
+        "y": 9.5993106E-4,
+        "z": -0.0019547688
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968686826
+    },
+    {
+      "ambientLight": 26.800001,
+      "gyroscope": {
+        "x": 0.005899213,
+        "y": 9.5993106E-4,
+        "z": -0.0019547688
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968686925
+    },
+    {
+      "ambientLight": 26.800001,
+      "gyroscope": {
+        "x": -0.0047298423,
+        "y": -8.726646E-5,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968687026
+    },
+    {
+      "ambientLight": 25.800001,
+      "gyroscope": {
+        "x": -0.0047298423,
+        "y": -8.726646E-5,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968687125
+    },
+    {
+      "ambientLight": 25.800001,
+      "gyroscope": {
+        "x": 5.7595863E-4,
+        "y": -0.0011519173,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968687226
+    },
+    {
+      "ambientLight": 25.800001,
+      "gyroscope": {
+        "x": 5.7595863E-4,
+        "y": -0.0011519173,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968687330
+    },
+    {
+      "ambientLight": 25.800001,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": 0.0041538836,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968687432
+    },
+    {
+      "ambientLight": 25.7,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": 0.0041538836,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968687533
+    },
+    {
+      "ambientLight": 25.7,
+      "gyroscope": {
+        "x": 0.010157816,
+        "y": -0.005410521,
+        "z": -0.014730579
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968687633
+    },
+    {
+      "ambientLight": 25.7,
+      "gyroscope": {
+        "x": 0.010157816,
+        "y": -0.005410521,
+        "z": -0.014730579
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968687734
+    },
+    {
+      "ambientLight": 23.7,
+      "gyroscope": {
+        "x": -0.0036651914,
+        "y": -8.726646E-5,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968687836
+    },
+    {
+      "ambientLight": 23.7,
+      "gyroscope": {
+        "x": -0.0036651914,
+        "y": -8.726646E-5,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968687936
+    },
+    {
+      "ambientLight": 23.7,
+      "gyroscope": {
+        "x": -4.712389E-4,
+        "y": -0.0022165682,
+        "z": -0.0019547688
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968688036
+    },
+    {
+      "ambientLight": 23.7,
+      "gyroscope": {
+        "x": -4.712389E-4,
+        "y": -0.0022165682,
+        "z": -0.0019547688
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968688136
+    },
+    {
+      "ambientLight": 23.7,
+      "gyroscope": {
+        "x": -0.0015358897,
+        "y": 9.5993106E-4,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968688237
+    },
+    {
+      "ambientLight": 23.7,
+      "gyroscope": {
+        "x": -0.0015358897,
+        "y": 9.5993106E-4,
+        "z": -8.901179E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968688337
+    },
+    {
+      "ambientLight": 23.7,
+      "gyroscope": {
+        "x": -0.0068591437,
+        "y": 0.0030892328,
+        "z": 0.0033510323
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968688437
+    },
+    {
+      "ambientLight": 23.800001,
+      "gyroscope": {
+        "x": -0.0068591437,
+        "y": 0.0030892328,
+        "z": 0.0033510323
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968688538
+    },
+    {
+      "ambientLight": 23.800001,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": -8.726646E-5,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968688638
+    },
+    {
+      "ambientLight": 23.800001,
+      "gyroscope": {
+        "x": 0.0016406095,
+        "y": -8.726646E-5,
+        "z": 1.5707963E-4
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968688738
+    },
+    {
+      "ambientLight": 23.800001,
+      "gyroscope": {
+        "x": -4.712389E-4,
+        "y": 0.002024582,
+        "z": 0.0012217305
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968688838
+    },
+    {
+      "ambientLight": 24.7,
+      "gyroscope": {
+        "x": -4.712389E-4,
+        "y": 0.002024582,
+        "z": 0.0012217305
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968688939
+    },
+    {
+      "ambientLight": 24.7,
+      "gyroscope": {
+        "x": 5.7595863E-4,
+        "y": -0.0011519173,
+        "z": 0.0012217305
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968689039
+    },
+    {
+      "ambientLight": 24.7,
+      "gyroscope": {
+        "x": 5.7595863E-4,
+        "y": -0.0011519173,
+        "z": 0.0012217305
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968689140
+    },
+    {
+      "ambientLight": 24.7,
+      "gyroscope": {
+        "x": 5.7595863E-4,
+        "y": -0.0011519173,
+        "z": 0.0012217305
+      },
+      "proximity": 5.0,
+      "timestamp": 1763968689240
+    }
+  ],
+  "type": "other"
+}

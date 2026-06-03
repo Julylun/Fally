@@ -26,12 +26,14 @@ import { CreateEventDto } from './dto/create-event.dto';
 import { QueryEventsDto } from './dto/query-events.dto';
 import { PatchEventDto } from './dto/patch-event.dto';
 import { StorageService } from '../storage/storage.service';
+import { IncidentsService } from '../incidents/incidents.service';
 
 @Controller('events')
 export class EventsController {
   constructor(
     private readonly eventsService: EventsService,
     private readonly storageService: StorageService,
+    private readonly incidentsService: IncidentsService,
   ) {}
 
   @Post()
@@ -57,7 +59,19 @@ export class EventsController {
       throw new BadRequestException(errors);
     }
     const filename = await this.storageService.saveSnapshot(file.buffer);
-    return this.eventsService.create(dto, filename);
+    const result = await this.eventsService.create(dto, filename);
+    const scopeId = this.incidentsService.resolveScopeId(dto.scopeId);
+    await this.incidentsService.onCctvFall({
+      detectedAt: new Date(dto.detectedAt),
+      confidence: dto.confidence,
+      label: dto.label,
+      bbox: dto.bbox,
+      snapshotFilename: filename,
+      cameraId: dto.cameraId,
+      scopeId,
+      rawCctvEventId: result.id,
+    });
+    return result;
   }
 
   @Get()

@@ -26,6 +26,7 @@ class Settings(BaseSettings):
     camera_id: str = Field(default="cam-edge-01", validation_alias="CAMERA_ID")
     backend_url: str = Field(default="http://localhost:3000", validation_alias="BACKEND_URL")
     backend_shared_token: str = Field(default="devtoken", validation_alias="BACKEND_SHARED_TOKEN")
+    scope_id: str = Field(default="default", validation_alias="SCOPE_ID")
 
     local_db_path: Path = Field(default=Path("./data/edge.db"), validation_alias="LOCAL_DB_PATH")
     local_snapshot_dir: Path = Field(
