@@ -17,3 +17,28 @@ desktop.ini
 .env
 .env.local
 .env.*.local
+
+# Dependencies
+node_modules/
+.pnpm-store/
+dist/
+build/
+.dart_tool/
+.idea/
+.flutter-plugins-dependencies
+.flutter-plugins
+
+# Edge Server
+.venv/
+__pycache__/
+*.py[oc]
+*.pyc
+data/edge.db
+data/snapshots/
+
+# Temp patches and scripts
+patch*.js
+fix-*.js
+*.patch
+*.rej
+test-*.js
